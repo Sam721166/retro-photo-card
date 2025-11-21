@@ -248,10 +248,10 @@ function App() {
                 </div>
 
                 <div className=' flex  flex-wrap '>
-                  <h1 className='mt-2 font-semibold text-lg s break-all'>{title}</h1>
+                  <h1 className='mt-2 font-semibold text-lg break-all'>{title}</h1>
                 </div>
-                <div className='w-full h-11 flex justify-end items-end'>
-                  <p className='mt-2  text-sm text-[#a3a3a3] font-mono '>{date}</p>
+                <div className='w-full h-9 md:h-11 flex justify-end items-end'>
+                  <p className=' md:mt-2  text-sm text-[#a3a3a3] font-mono '>{date}</p>
                 </div>
               </div>
 
