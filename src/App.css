@@ -32,6 +32,7 @@
 @custom-variant teal (&:where(.teal, .teal *));
 @custom-variant orange (&:where(.orange, .orange *));
 @custom-variant sunlight (&:where(.sunlight, .sunlight *));
+@custom-variant custom (&:where(.custom, .custom *));
 
 
 /* filters */

@@ -28,7 +28,27 @@ function App() {
 
   const [filter, setFilter] = useState("");
 
+
+
   
+  const [color, setColor] = useState("#ff0000")
+  
+  // for darker color genaration of border for custom color
+  function darkenColor(hex, percent) {
+  let r = parseInt(hex.substring(1,3), 16);
+  let g = parseInt(hex.substring(3,5), 16);
+  let b = parseInt(hex.substring(5,7), 16);
+
+  r = Math.floor(r * (1 - percent));
+  g = Math.floor(g * (1 - percent));
+  b = Math.floor(b * (1 - percent));
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+
+
+
 
 // for image upload
   function handleUpload(e){
@@ -121,11 +141,15 @@ function App() {
           </div>
 
           <div>
-            <Bgcolor/>
+            
+            <Bgcolor  value={color} onChange={setColor} />
+
           </div>
 
           <div>
+
             <Filter  onFilterChange={setFilter}/>
+            
           </div>
 
         </div>
@@ -138,7 +162,9 @@ function App() {
 
             <div ref={imgBoxRef} className='inline-block'>
 
-              <div className='w-[300px] md:w-[320px] h-[370px] md:h-[400px] bg-[#e0f2fe] m-6 mb-10 rounded-lg shadow-lg border-2 border-[#7dd3fc] flex flex-col  hover:rotate-5 transition-all duration-400 px-5 pt-5 pb-4 overflow-hidden flex-wrap
+              <div className='w-[300px] md:w-[320px] h-[370px] md:h-[400px] bg-[#e0f2fe] m-6 mb-10 rounded-lg shadow-lg border-2 border-[#7dd3fc] flex flex-col  hover:rotate-5 transition-all duration-400 px-5 pt-5 pb-4 overflow-hidden flex-wrap   relative
+
+
 
               yellow:bg-yellow-200 yellow:border-yellow-400
               
@@ -159,7 +185,17 @@ function App() {
               teal:bg-teal-200 teal:border-teal-500
               
               orange:bg-orange-200 orange:border-orange-400
-              '>
+              
+              
+              custom:bg-[var(--customColor)] custom:border-[var(--customBorder)]
+              
+              '
+              style={{
+                "--customColor": color,
+                "--customBorder": darkenColor(color, 0.35), // 35% darker of stored color
+              }}
+              >
+
                 
                 <div className=' relative w-full aspect-square rounded-sm  overflow-hidden '>
                   {image ?
@@ -250,8 +286,8 @@ function App() {
                 <div className=' flex  flex-wrap '>
                   <h1 className='mt-1 md:mt-2 font-semibold text-lg break-all'>{title}</h1>
                 </div>
-                <div className='w-full h-8 md:h-11 flex justify-end items-end'>
-                  <p className='mt-0 md:mt-2  text-sm text-[#a3a3a3] font-mono '>{date}</p>
+                <div className='  w-full h-8 md:h-11 flex justify-end items-end'>
+                  <p className='absolute bottom-4 right-5 mt-0 md:mt-2  text-sm text-[#777777] font-mono '>{date}</p>
                 </div>
               </div>
 
