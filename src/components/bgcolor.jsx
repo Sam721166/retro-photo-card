@@ -25,9 +25,9 @@ function Bgcolor({onChange, value}) {
     
   return (
     <div className='flex flex-col'>
-        <h1 className='font-semibold text-2xl flex mb-2'>Colors</h1>
+        <h1 className='text-xl flex mb-2 font-[intermed] '>Colors</h1>
 
-        <div className='rounded-lg w-70 h-auto bg-white p-3 flex justify-center items-center gap-2.5 flex-wrap border-2 border-neutral-300 '>
+        <div className='rounded-lg w-70 h-auto bg-white p-3 flex justify-center items-center gap-2.5 flex-wrap border border-zinc-500'>
 
             <div className='relative group'>
                 <button onClick={()=> changeColor("yellow")} className={`size-10 rounded-full bg-yellow-300 active:scale-97 cursor-pointer   ${color === "yellow" ? "ring-2 ring-black ring-offset-1" : ""}`}>

@@ -27,9 +27,9 @@ function Filter({ onFilterChange }) {
 
   return (
     <div className='flex flex-col justify-center'>
-        <h1 className='font-semibold text-2xl mb-2 '>Filters</h1>
+        <h1 className='text-xl mb-2 font-[intermed]'>Filters</h1>
 
-        <div className='rounded-lg w-70 h-auto bg-white p-4 flex justify-start items-center gap-4 flex-wrap border-2 border-neutral-300 '>
+        <div className='rounded-lg w-70 h-auto bg-white p-4 flex justify-start items-center gap-4 flex-wrap border border-zinc-500 '>
 
             
 
