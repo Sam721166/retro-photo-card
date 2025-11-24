@@ -11,6 +11,7 @@ import Bgcolor from './components/bgcolor';
 import Filter from './components/filter';
 
 import { Analytics } from "@vercel/analytics/react"
+import Bold from './components/bold';
 
 
 
@@ -32,6 +33,8 @@ function App() {
 
   
   const [color, setColor] = useState("#ff0000")
+
+  const [textColor, setTextColor] = useState("")
   
   // for darker color genaration of border for custom color
   function darkenColor(hex, percent) {
@@ -102,7 +105,7 @@ function App() {
     <Analytics/>
       <div className='flex selection:text-white selection:bg-black flex-col md:flex-row '>
 
-        <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5  order-2 md:order-1 '>
+        <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5  order-2 md:order-1 md:overflow-y-auto no-scrollbar'>
 
           <div className='flex flex-col gap-2'>
             <h1 className='font-semibold text-2xl'>Title</h1>
@@ -118,6 +121,15 @@ function App() {
               ref={titleRef} />
             </form>
           </div>
+
+
+
+          <div>
+            <Bold  value={textColor} onChange={setTextColor}  />
+          </div>
+
+
+
 
           <div className='flex flex-col gap-2'>
             <h1 className='font-semibold text-2xl'>Date</h1>
@@ -154,7 +166,7 @@ function App() {
 
         </div>
 
-        <div className='h-screen w-auto flex-1 flex flex-col justify-center items-center md:-mt-7 selection:text-white selection:bg-black  pt-10 pb-10 md:pb-0  order-1 md:order-2
+        <div className='sticky    h-screen w-auto flex-1 flex flex-col justify-center items-center md:-mt-7 selection:text-white selection:bg-black  pt-10 pb-10 md:pb-0  order-1 md:order-2
         bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)]
         bg-[size:10px_10px]
         '>
@@ -284,8 +296,24 @@ function App() {
                 </div>
 
                 <div className=' flex  flex-wrap '>
-                  <h1 className='mt-1 md:mt-2 font-semibold text-lg break-all'>{title}</h1>
+
+                  <h1 className='mt-1 md:mt-2 font-semibold text-lg break-all 
+
+                  boldtext:font-bold
+                  italicText:italic
+                  underlinetext:underline
+                  strike:line-through
+
+                  customText:text-[var(--customTextColor)] '
+
+                  style={{
+                    "--customTextColor": textColor
+                  }}
+                  
+                  >{title}</h1>
                 </div>
+
+
                 <div className='  w-full h-8 md:h-11 flex justify-end items-end'>
                   <p className='absolute bottom-4 right-5 mt-0 md:mt-2  text-sm text-[#777777] font-mono '>{date}</p>
                 </div>

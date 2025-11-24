@@ -44,6 +44,31 @@
 @custom-variant cinematic (&:where(.cinematic, .cinematic *));
 
 
+/* bold */
+@custom-variant boldtext (&:where(.boldtext, .boldtext *));
+@custom-variant italicText (&:where(.italicText, .italicText *));
+@custom-variant underlinetext (&:where(.underlinetext, .underlinetext *));
+@custom-variant strike (&:where(.strike, .strike *));
+
+/* text color */
+@custom-variant customText (&:where(.customText, .customText *));
+
+
+
+
+/* hide scroll bar */
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+
 
 
 
