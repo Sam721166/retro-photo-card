@@ -17,7 +17,7 @@ function Link() {
         <button>
             <a href="https://buymeacoffee.com/samirande_">
                 <div className='border-2 rounded-lg px-2 py-1  bg-white hover:bg-neutral-200 transition-all duration-100 active:scale-97'>
-                    <img src="cofee.png" alt="" className='h-5 md:h-7  '/>
+                    <img src="cofee.webp" alt="" className='h-5 md:h-7  '/>
                 </div>
             </a>
         </button>
