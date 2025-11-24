@@ -88,7 +88,7 @@ function Bold({onChange, value}) {
                         type="color" 
                         value={value}
                         onChange={(e) => onChange(e.target.value)}
-                        className={` absolute z-5 opacity-100 cursor-pointer rounded-full size-50 translate-x-10 translate-y-15 border-none outline-none 
+                        className={` absolute z-5 opacity-100 cursor-pointer rounded-full size-50 translate-x-10 -translate-y-15 border-none outline-none 
                         `} />
                     
                         
