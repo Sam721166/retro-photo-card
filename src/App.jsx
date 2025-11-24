@@ -12,6 +12,7 @@ import Filter from './components/filter';
 
 import { Analytics } from "@vercel/analytics/react"
 import Bold from './components/bold';
+import Link from './components/link';
 
 
 
@@ -170,6 +171,9 @@ function App() {
         bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)]
         bg-[size:10px_10px]
         '>
+
+
+            <Link />
 
 
             <div ref={imgBoxRef} className='inline-block'>
