@@ -308,7 +308,7 @@ function App() {
 
                 <div className=' flex  flex-wrap '>
 
-                  <h1 className='mt-1 md:mt-2 font-semibold text-lg break-all 
+                  <h1 className='mt-1 md:mt-2 text-lg break-all 
 
                   boldtext:font-bold
                   italicText:italic
