@@ -13,6 +13,7 @@ import Filter from './components/filter';
 import { Analytics } from "@vercel/analytics/react"
 import Bold from './components/bold';
 import Link from './components/link';
+import FontStyle from './components/fontstyle';
 
 
 
@@ -36,6 +37,9 @@ function App() {
   const [color, setColor] = useState("#ff0000")
 
   const [textColor, setTextColor] = useState("")
+  const [font, setFont] = useState("sans-serif")
+
+
   
   // for darker color genaration of border for custom color
   function darkenColor(hex, percent) {
@@ -106,7 +110,7 @@ function App() {
     <Analytics/>
       <div className='flex selection:text-white selection:bg-black flex-col md:flex-row '>
 
-        <div className='h-180 md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 gap-5  order-2 md:order-1 md:overflow-y-auto no-scrollbar'>
+        <div className='h-auto md:h-screen w-auto md:w-100 bg-neutral-100 flex flex-col items-center pt-15 pb-15 gap-5  order-2 md:order-1 md:overflow-y-auto no-scrollbar'>
 
           <div className='flex flex-col gap-2'>
             <h1 className='font-semibold text-2xl'>Title</h1>
@@ -129,7 +133,10 @@ function App() {
             <Bold  value={textColor} onChange={setTextColor}  />
           </div>
 
-
+          <div>
+            <h1 className='text-2xl font-semibold mb-2'>Font Style</h1>
+            <FontStyle selectedFont={font} onFontChange={setFont} />
+          </div>
 
 
           <div className='flex flex-col gap-2'>
@@ -311,7 +318,8 @@ function App() {
                   customText:text-[var(--customTextColor)] '
 
                   style={{
-                    "--customTextColor": textColor
+                    "--customTextColor": textColor,
+                    fontFamily: font
                   }}
                   
                   >{title}</h1>
